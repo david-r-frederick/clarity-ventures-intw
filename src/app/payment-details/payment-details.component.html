@@ -1,0 +1,107 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Payment Details</h3>
+          <div class="checkbox pull-right">
+            <label>
+              <input type="checkbox" />
+              Remember
+            </label>
+          </div>
+        </div>
+        <div class="panel-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="cardNumber"> CARD NUMBER</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cardNumber"
+                  placeholder="Valid Card Number"
+                  minlength="16"
+                  maxlength="16"
+                  required
+                  autofocus
+                />
+                <span class="input-group-addon lockContainer"
+                  ><span class="glyphicon glyphicon-lock lock"></span
+                ></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-7 col-md-7">
+                <div class="form-group">
+                  <label for="expiryMonth"> EXPIRY DATE</label>
+                  <div>
+                    <div class="col-xs-6 col-lg-6 pl-ziro">
+                      <select class="form-control">
+                        <option>DD</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                      </select>
+                    </div>
+                    <div class="col-xs-6 col-lg-6 pl-ziro">
+                      <select class="form-control">
+                        <option>YY</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-5 col-md-5 pull-right">
+                <div class="form-group">
+                  <label for="cvCode"> CV CODE</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="cvCode"
+                    placeholder="CV"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+          <a href="#"
+            ><span class="badge pull-right"
+              ><span class="glyphicon glyphicon-usd"></span>{{ total }}</span
+            >
+            Final Payment</a
+          >
+        </li>
+      </ul>
+      <br />
+      <a
+        routerLink="/confirmation"
+        [queryParams]="{ orderConfirmationNumber: orderConfirmationNumber }"
+        class="btn btn-success btn-lg btn-block"
+        role="button"
+        >Pay</a
+      >
+    </div>
+  </div>
+</div>
